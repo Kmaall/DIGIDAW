@@ -102,11 +102,19 @@ body {
 
 /* 4. GRID CONTAINER & BORDERS */
 .brut-container {
-  max-width: 1240px;
   margin-inline: auto;
   border-inline: var(--line-thick);
   background: var(--bg-surface);
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  width: 100%;
+}
+
+/* Desktop: full width with breathing room inside borders */
+@media (min-width: 992px) {
+  .brut-container {
+    max-width: none;
+    padding-inline: 2rem;
+  }
 }
 
 .b-top { border-top: var(--line-thick) !important; }
@@ -520,6 +528,103 @@ body {
 }
 
 /* 13. RESPONSIVE BREAKPOINTS */
+
+/* Extra-small phones (<576px) */
+@media (max-width: 575px) {
+  .brut-container {
+    padding-inline: 1rem;
+  }
+
+  .brut-nav {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .brut-nav-cell {
+    border-right: none;
+    border-bottom: var(--line-thick);
+    justify-content: flex-start;
+    text-align: left;
+    white-space: normal;
+    padding: 0.75rem 1rem;
+  }
+
+  .brut-nav-cell.brand {
+    font-size: 1.8rem;
+    padding-inline: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .brut-nav-cell.yellow-cell {
+    margin-left: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .theme-toggle-btn {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-giant-title {
+    font-size: clamp(2.4rem, 10vw + 0.5rem, 5rem);
+    line-height: 0.9;
+  }
+
+  .author-thumb {
+    width: 40px;
+    height: 40px;
+  }
+
+  .table-brut th,
+  .table-brut td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .font-headline {
+    font-size: 0.95rem;
+  }
+
+  .font-mono {
+    font-size: 0.85rem;
+  }
+
+  footer .col-12 {
+    padding-inline: 1rem;
+  }
+}
+
+/* Small phones & tablets (576px – 991px) */
+@media (min-width: 576px) and (max-width: 991px) {
+  .brut-container {
+    padding-inline: 1.5rem;
+  }
+
+  .brut-nav {
+    flex-direction: column;
+  }
+
+  .brut-nav-cell {
+    border-right: none;
+    border-bottom: var(--line-thick);
+    justify-content: flex-start;
+    white-space: normal;
+  }
+
+  .brut-nav-cell.yellow-cell {
+    margin-left: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-giant-title {
+    font-size: clamp(2.8rem, 8vw + 0.5rem, 6rem);
+  }
+}
+
+/* Existing breakpoint for larger tablets/desktop */
 @media (max-width: 991px) {
   .brut-nav {
     flex-direction: column;
@@ -532,9 +637,4 @@ body {
   .brut-nav-cell.yellow-cell {
     margin-left: 0;
   }
-}
-
-:focus-visible {
-  outline: 3px solid var(--ink) !important;
-  outline-offset: 2px !important;
 }

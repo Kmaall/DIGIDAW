@@ -115,6 +115,19 @@ body {
     max-width: none;
     padding-inline: 2rem;
   }
+
+  /* Navbar cells fill full width evenly — no empty space on the right */
+  .brut-nav {
+    flex-wrap: nowrap;
+  }
+  .brut-nav-cell {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+  .brut-nav-cell.brand {
+    flex: 2;
+  }
 }
 
 .b-top { border-top: var(--line-thick) !important; }

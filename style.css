@@ -1,0 +1,540 @@
+/* ==========================================================================
+   DIGIDAW // Digital Directory of Arts and Words
+   Swiss Architectural Brutalism Design System
+   Compatible with Bootstrap 5.3 + Full Light & Dark Mode
+   ========================================================================== */
+
+/* 1. THEME TOKENS */
+:root {
+  --bg-page: #fbfbfb;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f0f0f0;
+  --ink: #000000;
+  --ink-muted: #555555;
+  --ink-secondary: #333333;
+
+  /* Disciplined Accent Palette: 95% Monochrome + Yellow & Red Accents */
+  --accent-yellow: #ffe600;
+  --accent-red: #ff3b1e;
+
+  /* Typography */
+  --font-display: 'Anton', 'Impact', sans-serif;
+  --font-headline: 'Space Grotesk', 'Arial Black', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-body: 'Public Sans', system-ui, -apple-system, sans-serif;
+
+  /* Grid Lines */
+  --line-thick: 2px solid #000000;
+  --line-heavy: 3px solid #000000;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-page: #0a0a0a;
+  --bg-surface: #141414;
+  --bg-subtle: #1f1f1f;
+  --ink: #fcfcfc;
+  --ink-muted: #b5b5b5;
+  --ink-secondary: #cccccc;
+
+  --line-thick: 2px solid #fcfcfc;
+  --line-heavy: 3px solid #fcfcfc;
+}
+
+/* 2. BASE RESET & SHARP CORNERS */
+*,
+*::before,
+*::after,
+.btn,
+.card,
+.form-control,
+.form-select,
+.badge,
+.navbar,
+.accordion-item,
+.accordion-button,
+.table,
+.alert,
+img {
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+}
+
+/* 3. TYPOGRAPHY */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.font-headline {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-ink { color: var(--ink) !important; }
+.text-ink-muted { color: var(--ink-muted) !important; }
+
+.hero-giant-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8.5vw + 0.5rem, 7.5rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* 4. GRID CONTAINER & BORDERS */
+.brut-container {
+  max-width: 1240px;
+  margin-inline: auto;
+  border-inline: var(--line-thick);
+  background: var(--bg-surface);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.b-top { border-top: var(--line-thick) !important; }
+.b-bottom { border-bottom: var(--line-thick) !important; }
+.b-start { border-left: var(--line-thick) !important; }
+.b-end { border-right: var(--line-thick) !important; }
+.b-all { border: var(--line-thick) !important; }
+
+/* 5. NAVIGATION */
+.brut-nav {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: var(--line-thick);
+  background: var(--bg-surface);
+}
+
+.brut-nav-cell {
+  border-right: var(--line-thick);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-headline);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.brut-nav-cell:hover {
+  background-color: var(--ink);
+  color: var(--bg-surface);
+}
+
+.brut-nav-cell.brand {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  padding-inline: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.brut-nav-cell.active-cell {
+  background-color: var(--ink);
+  color: var(--bg-surface);
+}
+
+.brut-nav-cell.yellow-cell {
+  background-color: var(--accent-yellow);
+  color: #000000 !important;
+  border-right: none;
+}
+.brut-nav-cell.yellow-cell:hover {
+  background-color: var(--ink);
+  color: var(--accent-yellow) !important;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+}
+
+/* 6. BUTTONS */
+.btn-brut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: var(--line-thick);
+  background: var(--bg-surface);
+  color: var(--ink);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.btn-brut:hover {
+  background: var(--ink);
+  color: var(--bg-surface);
+}
+
+.btn-brut-yellow {
+  background: var(--accent-yellow);
+  border: var(--line-thick);
+  color: #000000 !important;
+  font-family: var(--font-headline);
+  font-weight: 800;
+}
+.btn-brut-yellow:hover {
+  background: var(--ink);
+  color: var(--accent-yellow) !important;
+}
+
+/* 7. CARDS & VISUAL GALLERY */
+.card-brut {
+  background: var(--bg-surface);
+  border: var(--line-thick);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease;
+  color: var(--ink);
+}
+
+.card-brut-header {
+  padding: 1rem 1.25rem;
+  border-bottom: var(--line-thick);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-surface);
+  color: var(--ink);
+}
+
+.card-brut-img {
+  aspect-ratio: 16 / 10;
+  background: var(--bg-subtle);
+  border-bottom: var(--line-thick);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  color: var(--ink);
+}
+
+.card-brut-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.card-brut:hover .card-brut-img img {
+  transform: scale(1.03);
+}
+
+.card-brut-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  color: var(--ink);
+}
+
+.gallery-card {
+  border: var(--line-thick);
+  overflow: hidden;
+  background: var(--bg-surface);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-img-box {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: var(--line-thick);
+  background: #111111;
+}
+
+.gallery-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.gallery-card:hover .gallery-img-box img {
+  transform: scale(1.04);
+}
+
+.author-thumb {
+  width: 48px;
+  height: 48px;
+  border: var(--line-thick);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #141414;
+}
+
+/* 8. ACCORDION */
+.accordion-brut {
+  border: var(--line-thick);
+}
+
+.accordion-brut .accordion-item {
+  border: none;
+  border-bottom: var(--line-thick);
+  background: var(--bg-surface);
+}
+
+.accordion-brut .accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-brut .accordion-button {
+  background-color: var(--bg-surface);
+  color: var(--ink);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none !important;
+  border: none;
+}
+
+.accordion-brut .accordion-button:not(.collapsed) {
+  background-color: var(--accent-yellow);
+  color: #000000 !important;
+  border-bottom: var(--line-thick);
+}
+
+.accordion-brut .accordion-body {
+  background-color: var(--bg-subtle);
+  color: var(--ink);
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* 9. DATA MATRIX TABLE */
+.table-brut-wrap {
+  border: var(--line-thick);
+  overflow-x: auto;
+  background: var(--bg-surface);
+}
+
+.table-brut {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.table-brut th {
+  background: var(--ink);
+  color: var(--bg-surface);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid var(--ink);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.table-brut td {
+  padding: 1.1rem 1rem;
+  border: 1px solid var(--ink);
+  vertical-align: middle;
+  color: var(--ink);
+}
+
+.table-brut tr:hover td {
+  background-color: var(--bg-subtle);
+}
+
+/* 10. TICKER MARQUEE */
+.brutal-ticker {
+  background-color: var(--ink);
+  color: var(--bg-surface);
+  border-bottom: var(--line-thick);
+  padding-block: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.ticker-track {
+  display: inline-block;
+  animation: ticker-slide 28s linear infinite;
+}
+
+@keyframes ticker-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
+/* 11. FORM INPUTS */
+.form-brut {
+  border: var(--line-thick) !important;
+  background: var(--bg-surface) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-mono);
+  padding: 0.85rem 1.1rem;
+  font-size: 1rem;
+  transition: border-color 0.15s ease;
+}
+
+.form-brut::placeholder,
+.form-control::placeholder {
+  color: var(--ink-muted) !important;
+  opacity: 0.85 !important;
+}
+
+.form-brut:focus {
+  outline: none !important;
+  box-shadow: inset 0 0 0 2px var(--ink) !important;
+}
+
+.form-brut.is-invalid {
+  border-color: var(--accent-red) !important;
+  box-shadow: inset 0 0 0 2px var(--accent-red) !important;
+}
+
+.form-brut.is-valid {
+  border-color: var(--accent-yellow) !important;
+}
+
+/* 12. DARK MODE OVERRIDES */
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-surface) !important;
+  color: var(--ink) !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: var(--bg-subtle) !important;
+  color: var(--ink) !important;
+}
+
+[data-theme="dark"] .text-dark {
+  color: var(--ink) !important;
+}
+
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .text-secondary {
+  color: var(--ink-muted) !important;
+}
+
+[data-theme="dark"] .border-dark {
+  border-color: var(--ink) !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-brut {
+  background-color: var(--bg-surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--ink) !important;
+}
+
+/* Explicit high-contrast placeholder inside input box in dark mode */
+[data-theme="dark"] .form-brut::placeholder,
+[data-theme="dark"] .form-control::placeholder {
+  color: #c0c0c0 !important;
+  opacity: 0.9 !important;
+}
+
+[data-theme="dark"] .form-select option {
+  background-color: #141414 !important;
+  color: #fcfcfc !important;
+}
+
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fcfcfc !important;
+  -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+}
+
+[data-theme="dark"] .btn-outline-dark {
+  color: var(--ink) !important;
+  border-color: var(--ink) !important;
+}
+
+[data-theme="dark"] .btn-outline-dark:hover {
+  background-color: var(--ink) !important;
+  color: var(--bg-surface) !important;
+}
+
+[data-theme="dark"] .btn-dark {
+  background-color: var(--ink) !important;
+  color: var(--bg-surface) !important;
+  border-color: var(--ink) !important;
+}
+
+[data-theme="dark"] .badge.bg-dark {
+  background-color: #2a2a2a !important;
+  color: #fcfcfc !important;
+  border: 1px solid #fcfcfc;
+}
+
+/* 13. RESPONSIVE BREAKPOINTS */
+@media (max-width: 991px) {
+  .brut-nav {
+    flex-direction: column;
+  }
+  .brut-nav-cell {
+    border-right: none;
+    border-bottom: var(--line-thick);
+    justify-content: flex-start;
+  }
+  .brut-nav-cell.yellow-cell {
+    margin-left: 0;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink) !important;
+  outline-offset: 2px !important;
+}

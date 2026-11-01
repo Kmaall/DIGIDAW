@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#111111"/>
+  <!-- Brutalist Grid Lines -->
+  <line x1="0" y1="125" x2="800" y2="125" stroke="#333333" stroke-width="2"/>
+  <line x1="0" y1="250" x2="800" y2="250" stroke="#333333" stroke-width="2"/>
+  <line x1="0" y1="375" x2="800" y2="375" stroke="#333333" stroke-width="2"/>
+  <line x1="200" y1="0" x2="200" y2="500" stroke="#333333" stroke-width="2"/>
+  <line x1="400" y1="0" x2="400" y2="500" stroke="#333333" stroke-width="2"/>
+  <line x1="600" y1="0" x2="600" y2="500" stroke="#333333" stroke-width="2"/>
+  
+  <!-- Architectural Book Columns -->
+  <rect x="70" y="80" width="22" height="340" fill="#f5f5f5"/>
+  <rect x="100" y="120" width="18" height="300" fill="#ffe600"/>
+  <rect x="125" y="60" width="28" height="360" fill="#f5f5f5"/>
+  <rect x="160" y="140" width="16" height="280" fill="#888888"/>
+  
+  <rect x="250" y="100" width="24" height="320" fill="#f5f5f5"/>
+  <rect x="280" y="70" width="30" height="350" fill="#f5f5f5"/>
+  <rect x="318" y="130" width="18" height="290" fill="#ff3b1e"/>
+  <rect x="344" y="90" width="22" height="330" fill="#f5f5f5"/>
+  
+  <!-- Central Architectural Portal -->
+  <rect x="440" y="60" width="280" height="360" fill="#1a1a1a" stroke="#f5f5f5" stroke-width="3"/>
+  <polygon points="440,60 580,180 720,60" fill="#262626" stroke="#f5f5f5" stroke-width="2"/>
+  <rect x="490" y="220" width="180" height="200" fill="#111111" stroke="#ffe600" stroke-width="2"/>
+  <line x1="580" y1="220" x2="580" y2="420" stroke="#ffe600" stroke-width="2"/>
+  
+  <text x="580" y="270" font-family="monospace" font-size="14" font-weight="bold" fill="#ffe600" text-anchor="middle">DIGIDAW ARCHIVE</text>
+  <text x="580" y="300" font-family="sans-serif" font-size="28" font-weight="900" fill="#f5f5f5" text-anchor="middle">CANON // 2026</text>
+  <text x="580" y="340" font-family="monospace" font-size="12" fill="#aaaaaa" text-anchor="middle">FOUNDATIONAL TEXTS</text>
+</svg>
+

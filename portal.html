@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DIGIDAW Portal - Authenticated reader gateway to unrestricted poetry manuscripts and digital literature archives.">
+  <title>PORTAL // DIGIDAW Reader &amp; Archivist Access</title>
+
+  <!-- External Stylesheets: Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts: Anton (Display) & Public Sans / Space Grotesk / Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:wght@500;700;800&family=Space+Grotesk:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Brutalism Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen Reader Accessible Skip Link -->
+  <a href="#main-content" class="visually-hidden-focusable p-2 bg-warning text-dark border border-2 border-dark position-absolute top-0 start-0 z-3">Skip to main content</a>
+
+  <div class="brut-container">
+
+    <!-- ================= SECTION 1: HEADER & NAVIGATION ================= -->
+    <header class="brut-nav">
+      <a href="index.html" class="brut-nav-cell brand">DIGIDAW.</a>
+      <div class="brut-nav-cell d-none d-md-flex text-start font-mono small" style="line-height: 1.2;">
+        DIGITAL<br>DIRECTORY<br>ARTS &amp; WORDS
+      </div>
+      <a href="index.html" class="brut-nav-cell">HOME</a>
+      <a href="matrix.html" class="brut-nav-cell">POETS &amp; AUTHORS</a>
+      <a href="portal.html" class="brut-nav-cell active-cell">PORTAL ACCESS</a>
+
+      <!-- Theme Switcher Button -->
+      <div class="brut-nav-cell p-0">
+        <button id="theme-toggle" class="brut-nav-cell border-0 w-100 h-100 theme-toggle-btn" aria-label="Toggle Light/Dark Theme">
+          <i class="bi bi-moon-stars-fill theme-icon"></i>
+          <span class="theme-label">DARK MODE</span>
+        </button>
+      </div>
+
+      <!-- Accent Action Link -->
+      <a href="portal.html" class="brut-nav-cell yellow-cell">
+        ACCESS ARCHIVE <i class="bi bi-arrow-up-right ms-1"></i>
+      </a>
+    </header>
+
+    <!-- Marquee Ticker -->
+    <div class="brutal-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        &bull; SECURE GATEWAY &bull; VALID EMAIL VERIFICATION REQUIRED &bull; DIGITAL REPOSITORY OF GLOBAL ARTS & WORDS &bull; GITHUB PAGES STATIC DEPLOYMENT READY &bull;
+      </div>
+    </div>
+
+    <!-- ================= SECTION 2: TOP TITLE & STATUS ================= -->
+    <main id="main-content">
+      
+      <!-- Top Title Grid -->
+      <section class="row g-0 b-bottom">
+        <div class="col-lg-8 p-4 p-md-5 b-end">
+          <div class="font-mono small d-block mb-2 text-ink-muted">(GATEWAY // SECURITY PROTOCOL)</div>
+          <h1 class="hero-giant-title mb-0">READER<br>ACCESS.</h1>
+        </div>
+        <div class="col-lg-4 p-4 p-md-5 d-flex flex-column justify-content-between" style="background: var(--bg-subtle);">
+          <p class="font-headline small mb-0" style="line-height: 1.6;">
+            SECURE ACCESS GATEWAY TO UNRESTRICTED POETRY MANUSCRIPTS, INDONESIAN LYRICS, RARE LETTERS, AND CANONICAL BOOKS.
+          </p>
+          <div class="font-mono small pt-3 border-top border-2 border-dark d-flex justify-content-between">
+            <span>VAULT // LEVEL 01</span>
+            <span>VERIFICATION REQUIRED</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Status Feedback Alert Banner (Shown on submit) -->
+      <section id="portal-alert" class="p-4 b-bottom d-none font-mono"></section>
+
+      <!-- ================= SECTION 3: INTERACTIVE LOGIN & TERMINAL ================= -->
+      <section class="row g-0 b-bottom">
+        
+        <!-- Left Column: Interactive Form with Email Verification -->
+        <div class="col-lg-7 p-4 p-md-5 b-end">
+          
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="font-headline h4 mb-0 text-ink">AUTHENTICATE CREDENTIALS</h2>
+            <span class="badge bg-warning text-dark font-mono border border-1 border-dark">INTERACTIVE</span>
+          </div>
+
+          <form id="access-form" novalidate>
+            
+            <!-- Email Address with Strict Format Validation -->
+            <div class="mb-4">
+              <label for="portal-email" class="font-mono small text-uppercase mb-2 d-flex justify-content-between text-ink">
+                <span>01 // REGISTERED EMAIL ADDRESS *</span>
+                <span id="email-hint" class="text-ink-muted">MUST BE VALID EMAIL</span>
+              </label>
+              <input type="email" id="portal-email" class="form-control form-brut" placeholder="reader@digidaw.org" required autocomplete="email">
+              <div id="email-feedback" class="font-mono small mt-1 text-danger d-none">
+                <i class="bi bi-exclamation-triangle-fill"></i> Please provide a valid email format (e.g. name@domain.com).
+              </div>
+            </div>
+
+            <!-- Passphrase Key -->
+            <div class="mb-4">
+              <label for="portal-key" class="font-mono small text-uppercase mb-2 d-block text-ink">
+                02 // READER ACCESS KEY *
+              </label>
+              <input type="password" id="portal-key" class="form-control form-brut" placeholder="••••••••••••" required autocomplete="current-password">
+              <div class="font-mono small text-ink-muted mt-1">Default demo key: any 6+ character key.</div>
+            </div>
+
+            <!-- Clearance Tier Selection -->
+            <div class="mb-4">
+              <label for="portal-tier" class="font-mono small text-uppercase mb-2 d-block text-ink">
+                03 // CLEARANCE LEVEL
+              </label>
+              <select id="portal-tier" class="form-select form-brut font-headline fw-bold">
+                <option value="student" selected>TIER 1 — CASUAL READER / POETRY SCHOLAR</option>
+                <option value="researcher">TIER 2 — ACADEMIC RESEARCHER (RARE MANUSCRIPTS)</option>
+                <option value="archivist">TIER 3 — CURATOR / FULL SYSTEM ACCESS</option>
+              </select>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="form-check mb-4">
+              <input class="form-check-input border-2 border-dark" type="checkbox" id="portal-consent" required style="border-radius: 0 !important;">
+              <label class="form-check-label font-mono small text-ink" for="portal-consent">
+                I verify that I will respect DIGIDAW intellectual property and attribution protocols.
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="portal-submit-btn" class="btn btn-dark w-100 py-3 font-headline fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2" style="font-size: 1.1rem; letter-spacing: 0.05em;">
+              <span>VERIFY &amp; ENTER ARCHIVE</span>
+              <i class="bi bi-arrow-up-right fs-5"></i>
+            </button>
+          </form>
+
+        </div>
+
+        <!-- Right Column: Local Image & Terminal Status -->
+        <div class="col-lg-5 d-flex flex-column">
+          
+          <!-- Local Reliable Image (Guaranteed No Missing Picture) -->
+          <div class="gallery-img-box b-bottom" style="aspect-ratio: 16/9;">
+            <img src="images/library.svg" alt="Vault Library Archive Stacks">
+          </div>
+
+          <!-- Terminal Diagnostics -->
+          <div class="p-4 p-md-5 b-bottom" style="background: var(--bg-surface) !important;">
+            <div class="font-mono small text-ink-muted mb-2">SECURITY STATUS</div>
+            <h3 class="font-headline h4 mb-3 text-ink">TERMINAL DIAGNOSTICS</h3>
+            <div class="font-mono small" style="line-height: 2;">
+              <div class="d-flex justify-content-between border-bottom border-1 border-secondary pb-1">
+                <span>GATEWAY:</span>
+                <span class="text-success fw-bold">ONLINE &bull; 200 OK</span>
+              </div>
+              <div class="d-flex justify-content-between border-bottom border-1 border-secondary py-1">
+                <span>ENCRYPTION:</span>
+                <span>SHA-256 TLS 1.3</span>
+              </div>
+              <div class="d-flex justify-content-between border-bottom border-1 border-secondary py-1">
+                <span>PARSER:</span>
+                <span>EMAIL SANITIZER ACTIVE</span>
+              </div>
+              <div class="d-flex justify-content-between pt-1">
+                <span>DEPLOYMENT:</span>
+                <span>GITHUB PAGES READY</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Yellow Quote Box -->
+          <div class="p-4 p-md-5 flex-grow-1 d-flex flex-column justify-content-between" style="background: var(--accent-yellow); color: #000;">
+            <div>
+              <span class="fs-1 fw-bold">✱</span>
+              <h4 class="font-headline h5 mt-2 mb-2 text-black">POETIC INSCRIPTION</h4>
+              <p class="font-mono small mb-0 text-black">
+                "Yang fana adalah waktu. Kita abadi: memungut detik demi detik, merangkainya seperti bunga..." — Sapardi Djoko Damono
+              </p>
+            </div>
+            <div class="font-mono small text-end pt-3 text-black">
+              AUTHORIZED ACCESS ONLY // 2026
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ================= SECTION 4: FOOTER ================= -->
+    <footer class="row g-0 font-headline small">
+      <a href="matrix.html" class="col-12 col-md-3 p-3 p-md-4 b-end text-white text-decoration-none d-flex align-items-center justify-content-between" style="background: var(--accent-red);">
+        <span style="font-size: 0.95rem; line-height: 1.2;">EXPLORE POETS<br>&amp; BOOKS<br>DIRECTORY.</span>
+        <i class="bi bi-arrow-up-right fs-4"></i>
+      </a>
+
+      <div class="col-12 col-md-6 p-3 p-md-4 b-end d-flex flex-column justify-content-center">
+        <label for="footer-email-portal" class="font-mono mb-2 small text-uppercase">SUBSCRIBE TO DIGIDAW DISPATCHES</label>
+        <form class="d-flex" onsubmit="event.preventDefault(); alert('Subscribed to DIGIDAW Dispatches!');">
+          <input type="email" id="footer-email-portal" class="form-control form-brut me-2" placeholder="ENTER YOUR EMAIL" required>
+          <button type="submit" class="btn btn-dark fw-bold px-3 py-2 text-uppercase font-headline">SUBSCRIBE</button>
+        </form>
+      </div>
+
+      <div class="col-12 col-md-3 p-3 p-md-4 d-flex flex-column justify-content-center">
+        <div class="font-mono small text-uppercase mb-2 text-ink-muted">CANONICAL REPOSITORIES</div>
+        <div class="font-headline d-flex gap-3">
+          <a href="index.html" class="text-decoration-none text-ink">HOME.</a>
+          <a href="matrix.html" class="text-decoration-none text-ink">MATRIX.</a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="text-decoration-none text-ink">GITHUB.</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Helper Script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -424,7 +424,7 @@ body {
 
 .ticker-track {
   display: inline-block;
-  animation: ticker-slide 28s linear infinite;
+  animation: ticker-slide 50s linear infinite;
 }
 
 @keyframes ticker-slide {
